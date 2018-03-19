@@ -1,0 +1,11 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/  # 指定注册中心的地址，可以是多个，如果是多个的话，表示往多个注册中心注册，保证服务的高可用性
+  instance:
+    hostname: clientname

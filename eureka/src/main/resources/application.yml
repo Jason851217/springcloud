@@ -1,0 +1,16 @@
+server:
+      port: 8761  # 指定该Eureka实例的端口
+
+eureka:
+      instance:
+        hostname: localhost   # 指定该Eureka实例的主机名
+      client:
+        service-url:
+           defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+        register-with-eureka: false # 禁止EurekaServer用Erueka注册
+        fetch-registry: false #禁止抓取注册信息
+      server:
+        enable-self-preservation: false  # 自我保护 推荐在开发环境使用，在生产环境不推荐使用
+spring:
+      application:
+         name: discovery  #serviceId
